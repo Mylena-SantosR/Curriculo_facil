@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Crie, melhore e formate seu currículo gratuitamente. Seus dados permanecem no navegador.">
+  <meta name="theme-color" content="#123a43">
+  <title>Currículo Fácil | Seu próximo passo começa aqui</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/docx-reader.js"></script>
+  <script defer src="assets/js/resume-parser.js"></script>
+  <script defer src="assets/js/period-utils.js"></script>
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para conteúdo</a>
+  <header class="site-header no-print">
+    <div class="container header-content">
+      <a href="#inicio" class="brand" id="brand-link" aria-label="Currículo Fácil, início">
+        <span class="brand-icon" aria-hidden="true">CF</span>
+        <span><strong>currículo<span class="brand-highlight">fácil</span></strong><small>Seu próximo passo começa aqui</small></span>
+      </a>
+      <nav class="header-nav" aria-label="Navegação principal">
+        <button class="nav-link" id="nav-home" type="button">Início</button>
+        <button class="nav-link" id="nav-editor" type="button">Meu currículo</button>
+        <span class="privacy-chip" title="Os dados não são enviados para um servidor">🔒 Privacidade em primeiro lugar</span>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section id="screen-home" class="screen home-section">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">GRATUITO · SIMPLES · ACESSÍVEL</span>
+            <h1>Uma boa oportunidade começa com um <em>currículo bem apresentado.</em></h1>
+            <p>Crie seu currículo do zero ou melhore um documento que você já tem. Organize suas experiências, receba orientações e salve em PDF — sem cadastro.</p>
+            <div class="hero-actions">
+              <button class="btn btn-primary btn-lg" type="button" id="start-create">Criar meu currículo <span aria-hidden="true">→</span></button>
+              <button class="btn btn-outline btn-lg" type="button" id="start-improve">Melhorar meu currículo</button>
+            </div>
+            <p class="hero-note"><span aria-hidden="true">✓</span> Seus dados ficam neste navegador, enquanto a página estiver aberta.</p>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="mini-stamp mini-stamp-top">✦ Simples e organizado</div>
+            <div class="hero-paper">
+              <div class="hero-paper-top"><span class="fake-circle"></span><span class="fake-line short"></span></div>
+              <div class="fake-name"></div><div class="fake-line middle"></div>
+              <div class="fake-divider"></div><div class="fake-section"></div>
+              <div class="fake-line"></div><div class="fake-line long"></div><div class="fake-line middle"></div>
+              <div class="fake-section"></div><div class="fake-line"></div><div class="fake-line middle"></div><div class="fake-line long"></div>
+              <div class="fake-section"></div><div class="fake-line long"></div><div class="fake-line short"></div>
+            </div>
+            <div class="mini-stamp mini-stamp-bottom">✓ Pronto para PDF</div>
+          </div>
+        </div>
+        <div class="benefits" aria-label="Benefícios">
+          <div><span class="benefit-icon">01</span><div><strong>Preenchimento guiado</strong><small>Um passo de cada vez</small></div></div>
+          <div><span class="benefit-icon">02</span><div><strong>Dicas úteis</strong><small>Sem inventar informações</small></div></div>
+          <div><span class="benefit-icon">03</span><div><strong>Currículo em PDF</strong><small>Pronto para se candidatar</small></div></div>
+        </div>
+        <section class="how-section" aria-labelledby="how-title">
+          <span class="eyebrow">COMO FUNCIONA</span>
+          <h2 id="how-title">Do primeiro rascunho ao currículo pronto.</h2>
+          <div class="how-grid">
+            <article><span class="how-number">1</span><h3>Conte sua trajetória</h3><p>Preencha seus dados ou cole o texto de um currículo existente.</p></article>
+            <article><span class="how-number">2</span><h3>Revise com orientação</h3><p>Confira informações ausentes e sugestões simples para melhorar a clareza.</p></article>
+            <article><span class="how-number">3</span><h3>Salve seu documento</h3><p>Visualize a formatação e escolha “Salvar como PDF” no navegador.</p></article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="screen-app" class="screen app-screen" hidden>
+      <div class="container app-heading no-print">
+        <div>
+          <span class="eyebrow">SEU ESPAÇO DE EDIÇÃO</span>
+          <h1>Vamos preparar seu currículo.</h1>
+          <p>Preencha apenas informações verdadeiras. Você pode voltar e editar quando quiser.</p>
+        </div>
+        <div class="app-heading-actions">
+          <button class="btn btn-quiet" id="reset-button" type="button">Limpar formulário</button>
+          <button class="btn btn-primary" id="print-button-top" type="button">Salvar como PDF ↗</button>
+        </div>
+      </div>
+      <div class="container workspace">
+        <div class="form-panel no-print">
+          <div class="tab-list" role="tablist" aria-label="Etapas do currículo">
+            <button type="button" role="tab" aria-selected="true" class="tab active" id="tab-edit" aria-controls="panel-edit">1. Editar</button>
+            <button type="button" role="tab" aria-selected="false" class="tab" id="tab-import" aria-controls="panel-import">2. Importar</button>
+            <button type="button" role="tab" aria-selected="false" class="tab" id="tab-review" aria-controls="panel-review">3. Revisar</button>
+          </div>
+          <div id="panel-edit" class="tab-panel" role="tabpanel" aria-labelledby="tab-edit">
+            <div class="panel-intro"><h2>Suas informações</h2><p>Comece pelos seus dados de contato. Não é necessário informar documentos pessoais.</p></div>
+            <form id="resume-form" novalidate>
+              <fieldset class="field-group">
+                <legend>Dados de contato</legend>
+                <div class="fields-grid two">
+                  <label class="field full">Nome completo <input autocomplete="name" name="name" id="field-name" placeholder="Ex.: Maria Oliveira" maxlength="100"></label>
+                  <label class="field">E-mail <input type="email" autocomplete="email" name="email" id="field-email" placeholder="nome@exemplo.com" maxlength="120"></label>
+                  <label class="field">Telefone / WhatsApp <input type="tel" autocomplete="tel" name="phone" id="field-phone" placeholder="(61) 99999-9999" maxlength="24"></label>
+                  <label class="field">Cidade e estado (opcional) <input name="city" id="field-city" placeholder="Ex.: Luziânia, GO" maxlength="90"></label>
+                  <label class="field">LinkedIn ou portfólio (opcional) <input name="link" id="field-link" placeholder="linkedin.com/in/seuperfil" maxlength="180"></label>
+                </div>
+                <p class="field-help">Não inclua CPF, RG, data de nascimento ou endereço completo.</p>
+              </fieldset>
+              <fieldset class="field-group">
+                <legend>Objetivo e apresentação</legend>
+                <label class="field">Área ou cargo de interesse <input name="objective" id="field-objective" placeholder="Ex.: Auxiliar de serviços gerais" maxlength="140"></label>
+                <label class="field">Resumo profissional <textarea name="summary" id="field-summary" rows="4" maxlength="1000" placeholder="Conte sobre suas experiências, habilidades e o tipo de trabalho que procura."></textarea></label>
+                <p class="field-help">Se está retornando ao mercado, valorize experiências anteriores e habilidades reais. Evite informações que não possa comprovar.</p>
+              </fieldset>
+              <fieldset class="field-group">
+                <legend>Experiências profissionais</legend>
+                <p class="field-help first-help">Pode deixar sem preencher se ainda não teve emprego formal. Trabalho autônomo e voluntário também podem ser descritos com honestidade.</p>
+                <div id="experiences-list" class="repeat-list"></div>
+                <button type="button" class="btn btn-add" id="add-experience">+ Adicionar experiência</button>
+              </fieldset>
+              <fieldset class="field-group">
+                <legend>Formação acadêmica</legend>
+                <div id="education-list" class="repeat-list"></div>
+                <button type="button" class="btn btn-add" id="add-education">+ Adicionar formação</button>
+              </fieldset>
+              <fieldset class="field-group">
+                <legend>Competências e cursos</legend>
+                <label class="field">Habilidades (separe por vírgula) <textarea name="skills" id="field-skills" rows="3" placeholder="Ex.: Atendimento ao público, Pacote Office, Organização"></textarea></label>
+                <label class="field">Cursos e certificações (opcional, um por linha) <textarea name="courses" id="field-courses" rows="3" placeholder="Ex.: Informática básica — 2024"></textarea></label>
+              </fieldset>
+            </form>
+            <div class="panel-actions"><button class="btn btn-outline" type="button" id="go-review">Ver recomendações →</button><button class="btn btn-primary" id="print-button" type="button">Salvar como PDF ↗</button></div>
+          </div>
+
+          <div id="panel-import" class="tab-panel" role="tabpanel" aria-labelledby="tab-import" hidden>
+            <div class="panel-intro"><h2>Melhorar um currículo existente</h2><p>Envie um arquivo DOCX ou TXT, ou cole o texto abaixo. Você poderá revisar tudo no editor, inclusive datas de início e fim em mês/ano, antes de salvar.</p></div>
+            <div class="import-box">
+              <label class="upload-label" for="file-import"><span class="upload-symbol" aria-hidden="true">⇧</span><strong>Selecionar arquivo do computador</strong><small>DOCX ou TXT · até 4 MB · processado localmente</small></label>
+              <input type="file" id="file-import" accept=".docx,.txt,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain">
+              <p class="field-help">Arquivos DOC antigos (.doc) e PDFs não são importados nesta versão. Você pode copiar e colar o texto deles.</p>
+            </div>
+            <label class="field">Ou cole o texto do currículo <textarea id="import-text" rows="11" placeholder="Cole aqui o conteúdo do currículo..." spellcheck="true"></textarea></label>
+            <div class="import-actions"><button class="btn btn-primary" type="button" id="parse-import">Aproveitar informações no editor →</button></div>
+            <div id="import-status" class="status-message" role="status" aria-live="polite" hidden></div>
+            <div id="import-analysis" class="import-analysis" hidden aria-live="polite"></div>
+            <div class="info-box"><strong>Como funciona esta importação?</strong><p>O sistema separa formação, cursos, competências, experiências e outros campos quando identifica seus títulos. Informações não reconhecidas continuam no texto original para conferência. Revise sempre antes de salvar.</p></div>
+          </div>
+
+          <div id="panel-review" class="tab-panel" role="tabpanel" aria-labelledby="tab-review" hidden>
+            <div class="panel-intro"><h2>Revisão do currículo</h2><p>Confira os itens abaixo antes de gerar o PDF. São orientações básicas, não uma correção de português com IA.</p></div>
+            <div class="review-overview"><strong id="review-count">0 itens para conferir</strong><span id="review-caption">A avaliação usa apenas os campos que você preencheu.</span></div>
+            <div id="review-items" class="review-items" aria-live="polite"></div>
+            <div class="info-box"><strong>Dica para quem está retornando ao mercado</strong><p>Não é preciso explicar períodos sem trabalho no currículo. Destaque experiências, habilidades atuais e o cargo de interesse. Mantenha as informações verdadeiras.</p></div>
+            <div class="panel-actions"><button class="btn btn-outline" type="button" id="back-edit">Voltar para edição</button><button class="btn btn-primary" type="button" id="print-button-review">Salvar como PDF ↗</button></div>
+          </div>
+        </div>
+
+        <aside class="preview-panel" aria-label="Pré-visualização do currículo">
+          <div class="preview-heading no-print">
+            <div><strong>Pré-visualização</strong><small>O resultado é atualizado enquanto você digita.</small></div>
+            <div class="preview-layout-actions">
+              <label class="layout-control" for="layout-select"><span>Estilo do currículo</span>
+                <select id="layout-select" aria-describedby="layout-description">
+                  <option value="compacto">Compacto</option>
+                  <option value="padrao">Padrão</option>
+                  <option value="amplo" selected>Amplo</option>
+                </select>
+              </label>
+              <span class="a4-tag">A4</span>
+            </div>
+          </div>
+          <p id="layout-description" class="layout-description no-print" aria-live="polite">Amplo: mais destaque e espaços entre as informações. Ideal para currículos curtos.</p>
+          <article id="resume-preview" class="resume-paper layout-amplo" aria-label="Currículo em construção">
+            <header class="resume-top" hidden>
+              <h2 id="pv-name" hidden></h2>
+              <p id="pv-objective" class="resume-role" hidden></p>
+              <p id="pv-contact" class="resume-contact" hidden></p>
+            </header>
+            <section class="resume-section" id="pv-summary-wrap" hidden><h3>PERFIL PROFISSIONAL</h3><p id="pv-summary"></p></section>
+            <section class="resume-section" id="pv-exp-wrap" hidden><h3>EXPERIÊNCIA PROFISSIONAL</h3><div id="pv-experiences"></div></section>
+            <section class="resume-section" id="pv-education-wrap" hidden><h3>FORMAÇÃO ACADÊMICA</h3><div id="pv-education"></div></section>
+            <section class="resume-section" id="pv-skills-wrap" hidden><h3>COMPETÊNCIAS</h3><p id="pv-skills"></p></section>
+            <section class="resume-section" id="pv-courses-wrap" hidden><h3>CURSOS E CERTIFICAÇÕES</h3><div id="pv-courses" class="resume-course-list"></div></section>
+          </article>
+          <div class="preview-footnote no-print"><p>Para salvar em PDF: clique no botão e escolha “Salvar como PDF” na janela de impressão do navegador. Revise antes de compartilhar.</p><p class="print-clean-tip"><strong>Para um PDF limpo:</strong> desative <em>“Cabeçalhos e rodapés”</em> na janela de impressão para remover data, nome do site, URL e numeração nas bordas.</p></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer no-print"><div class="container footer-inner"><span><strong>currículofácil</strong> · Projeto de extensão em Sistemas de Informação</span><span>Feito para ampliar oportunidades, sem cadastro.</span></div></footer>
+  <div id="toast" class="toast no-print" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
